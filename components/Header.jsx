@@ -22,7 +22,7 @@ const Header = () => {
             {["Home", "Weather", "About", "Contact"].map((label) => (
               <a
                 key={label}
-                href={label.toLowerCase()}
+                href={label === "Home" ? "/home" : `/${label.toLowerCase()}`}
                 className="text-neutral-text hover:text-brand-primary transition"
               >
                 {label}
@@ -60,7 +60,7 @@ const Header = () => {
             {["Home", "Weather", "About", "Contact"].map((label) => (
               <a
                 key={label}
-                href={label.toLowerCase()}
+                href={label === "Home" ? "/home" : `/${label.toLowerCase()}`}
                 className="block px-4 py-2 rounded hover:bg-neutral-text/10 transition"
               >
                 {label}
