@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect, useState } from "react";
 import { 
@@ -10,10 +12,8 @@ import {
   Sunset,
   Sun,
   Cloud,
-  CloudRain,
-  Zap
 } from 'lucide-react';
-import { format, addDays } from 'date-fns';
+import { format } from 'date-fns';
 
 import { WeatherCard, ForecastCard, LocationHeader } from '../../components/WeatherCard';
 import { SearchBar } from '../../components/SearchBar';

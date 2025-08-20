@@ -1,16 +1,6 @@
-import React from 'react';
-import { 
-  Thermometer, 
-  Droplets, 
-  Wind, 
-  Eye, 
-  Gauge, 
-  Sunrise, 
-  Sunset,
-  MapPin,
-  Calendar
-} from 'lucide-react';
-import { format } from 'date-fns';
+import React from "react";
+import { Droplets, Wind, MapPin, Calendar } from "lucide-react";
+import { format } from "date-fns";
 
 interface WeatherCardProps {
   title: string;
@@ -21,16 +11,18 @@ interface WeatherCardProps {
   className?: string;
 }
 
-export const WeatherCard: React.FC<WeatherCardProps> = ({ 
-  title, 
-  value, 
-  unit, 
-  icon, 
+export const WeatherCard: React.FC<WeatherCardProps> = ({
+  title,
+  value,
+  unit,
+  icon,
   description,
-  className = ""
+  className = "",
 }) => {
   return (
-    <div className={`bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 ${className}`}>
+    <div
+      className={`bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 ${className}`}
+    >
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-white/80 text-sm font-medium">{title}</h3>
         <div className="text-white/60">{icon}</div>
@@ -63,14 +55,14 @@ export const ForecastCard: React.FC<ForecastCardProps> = ({
   low,
   description,
   humidity,
-  windSpeed
+  windSpeed,
 }) => {
   return (
     <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 min-w-[200px]">
       <div className="text-center">
         <p className="text-white/80 text-sm font-medium mb-2">{day}</p>
         <div className="flex justify-center mb-3">
-          <img 
+          <img
             src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
             alt={description}
             className="w-12 h-12"
@@ -105,17 +97,21 @@ interface LocationHeaderProps {
 export const LocationHeader: React.FC<LocationHeaderProps> = ({
   location,
   country,
-  currentTime
+  currentTime,
 }) => {
   return (
     <div className="text-center mb-8">
       <div className="flex items-center justify-center gap-2 mb-2">
         <MapPin className="w-5 h-5 text-white/80" />
-        <h1 className="text-2xl font-bold text-white">{location}, {country}</h1>
+        <h1 className="text-2xl font-bold text-white">
+          {location}, {country}
+        </h1>
       </div>
       <div className="flex items-center justify-center gap-2 text-white/70">
         <Calendar className="w-4 h-4" />
-        <p className="text-sm">{format(currentTime, 'EEEE, MMMM do, yyyy • h:mm a')}</p>
+        <p className="text-sm">
+          {format(currentTime, "EEEE, MMMM do, yyyy • h:mm a")}
+        </p>
       </div>
     </div>
   );
